@@ -1,0 +1,52 @@
+language: php
+php: "7"
+
+# Obtiene el navegador Chrome
+addons:
+  chrome: stable
+
+services:
+  - mysql
+
+
+before_install:
+  - mysql -e 'CREATE DATABASE homestead_test;'
+
+# Instala el webdriver de Chrome y el escritorio simulado
+install:
+  - wget -N http://chromedriver.storage.googleapis.com/2.34/chromedriver_linux64.zip -P ~/
+  - unzip ~/chromedriver_linux64.zip -d ~/
+  - rm ~/chromedriver_linux64.zip
+  - sudo mv -f ~/chromedriver /usr/local/share/
+  - sudo chmod +x /usr/local/share/chromedriver
+  - sudo ln -s /usr/local/share/chromedriver /usr/local/bin/chromedriver
+  - sudo apt-get install xvfb
+
+before_script:
+  - cp .env.travis .env
+  - composer self-update
+  - composer install --no-interaction
+  - php artisan key:generate
+  - php artisan migrate
+  - cd tests/Functional
+  - virtualenv --python=/usr/bin/python3 venv
+  - source venv/bin/activate
+  - Xvfb :0 >& /dev/null &
+  - export DISPLAY=:0
+  - pip install -r requirements.txt
+  - cd ../../
+
+script:
+  - vendor/bin/phpunit
+  - cd tests/Functional
+  - behave
+
+cache:
+  directories:
+    - node_modules
+    - vendor
+
+notifications:
+  email:
+    on_success: always
+    on_failure: never
