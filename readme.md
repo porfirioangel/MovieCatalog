@@ -10,7 +10,7 @@ here we can see the use of the following concepts:
 - Travis integration
 
 ## Travis status
-[![Build Status](https://travis-ci.org/porfirioangel/MovieCatalogTest.svg?branch=master)](https://travis-ci.org/porfirioangel/MovieCatalogTest)
+[![Build Status](https://travis-ci.org/porfirioangel/MovieCatalog.svg?branch=master)](https://travis-ci.org/porfirioangel/MovieCatalog)
 
 ## Challenge requirements
 
