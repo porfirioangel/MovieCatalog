@@ -1,0 +1,1 @@
+<script src="{{ asset('vendor/jquery-easing/jquery.easing.min.js') }}"></script>

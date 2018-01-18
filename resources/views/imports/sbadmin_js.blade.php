@@ -1,0 +1,1 @@
+<script src="{{ asset('js/sb-admin.js') }}"></script>
