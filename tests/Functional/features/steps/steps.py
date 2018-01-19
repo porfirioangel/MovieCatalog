@@ -24,8 +24,6 @@ def step_impl(context):
 @given(u'I open the login page')
 def step_impl(context):
     html = find_element(context, By.TAG_NAME, 'html')
-    print(html.get_attribute('innerHTML'))
-    time.sleep(10)
     drop = find_element(context, By.ID, 'userDropdown')
     drop.send_keys(keys.Keys.ENTER)
     btn_login = find_element(context, By.ID, 'btnLogin')
@@ -44,9 +42,7 @@ def step_impl(context, password):
 
 @when(u'I click <login>')
 def step_impl(context):
-    btn_login = find_element(context, By.ID, 'btnLogin')
-    btn_login.send_keys(keys.Keys.ENTER)
-    time.sleep(2)
+    i_click_login(context)
 
 @then(u'I can see the logout menu')
 def step_impl(context):
@@ -54,6 +50,27 @@ def step_impl(context):
     drop.send_keys(keys.Keys.ENTER)
     btn_logout = find_element(context, By.ID, 'btnLogout')
 
+@given(u'I click <login>')
+def step_impl(context):
+    i_click_login(context)
+
+@when(u'I open the profile page')
+def step_impl(context):
+    drop = find_element(context, By.ID, 'userDropdown')
+    drop.send_keys(keys.Keys.ENTER)
+    btn_profile = find_element(context, By.ID, 'btnProfile')
+    btn_profile.send_keys(keys.Keys.ENTER)
+
+@then(u'I can see my personal information')
+def step_impl(context):
+    p_name = find_element(context, By.ID, 'pName')
+    p_lastname = find_element(context, By.ID, 'pLastname')
+    p_email = find_element(context, By.ID, 'pEmail')
+
+def i_click_login(context):
+    btn_login = find_element(context, By.ID, 'btnLogin')
+    btn_login.send_keys(keys.Keys.ENTER)
+    time.sleep(2)
 
 
 def find_element(context, by, value):

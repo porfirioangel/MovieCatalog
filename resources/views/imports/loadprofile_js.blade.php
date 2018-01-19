@@ -1,0 +1,1 @@
+<script src="{{ asset('js/load_profile.js') }}"></script>

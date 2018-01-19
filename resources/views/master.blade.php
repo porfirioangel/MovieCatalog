@@ -53,7 +53,8 @@
                 </a>
                 <div class="dropdown-menu dropdown-menu-right"
                      aria-labelledby="userDropdown">
-                    <a class="dropdown-item" href="#">
+                    <a id="btnProfile" class="dropdown-item"
+                       href="{{ url('profile') }}">
                         <div class="dropdown-message">
                             <i class="fa fa-fw fa-id-card"></i>
                             View Profile
@@ -85,7 +86,7 @@
     <div class="container-fluid">
         <ol class="breadcrumb">
             <li class="breadcrumb-item">
-                <a href="#">Movie Catalog</a>
+                <a href="{{url('/')}}">Movie Catalog</a>
             </li>
             <li class="breadcrumb-item active">@yield('section_title')</li>
         </ol>
