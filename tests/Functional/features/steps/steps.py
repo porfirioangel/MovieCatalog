@@ -23,6 +23,9 @@ def step_impl(context):
 
 @given(u'I open the login page')
 def step_impl(context):
+    html = find_element(context, By.TAG_NAME, 'html')
+    print(html.get_attribute('innerHTML'))
+    time.sleep(10)
     drop = find_element(context, By.ID, 'userDropdown')
     drop.send_keys(keys.Keys.ENTER)
     btn_login = find_element(context, By.ID, 'btnLogin')
