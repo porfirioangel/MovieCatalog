@@ -1,0 +1,1 @@
+<script src="{{ asset('js/api_settings.js') }}"></script>

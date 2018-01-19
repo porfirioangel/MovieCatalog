@@ -12,7 +12,11 @@ def before_scenario(context, scenario):
 
         context.driver = webdriver.Chrome(chrome_options=chrome_options)
 
-    # context.driver.maximize_window()
+    try:
+        context.driver.maximize_window()
+    except:
+        pass
+
     context.driver.get('http://localhost:8000')
 
 

@@ -4,7 +4,7 @@
 /public/storage
 /storage/*.key
 /vendor
-/.idea
+.idea
 /.vagrant
 Homestead.json
 Homestead.yaml
@@ -115,3 +115,5 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+*.mwb

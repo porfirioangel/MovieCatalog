@@ -20,22 +20,26 @@
 
 <body class="bg-dark">
 <div class="container">
+    @component('errors_modal')@endcomponent
+
     <div class="card card-login mx-auto mt-5">
         <div class="card-header">Login</div>
         <div class="card-body">
             <form>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Email address</label>
-                    <input class="form-control" id="exampleInputEmail1"
+                    <label for="txtEmail">Email address</label>
+                    <input class="form-control" id="txtEmail"
                            type="email" aria-describedby="emailHelp"
                            placeholder="Enter email">
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
-                    <input class="form-control" id="exampleInputPassword1"
+                    <label for="txtPassword">Password</label>
+                    <input class="form-control" id="txtPassword"
                            type="password" placeholder="Password">
                 </div>
-                <a class="btn btn-primary btn-block" href="index.html">Login</a>
+                <button id="btnLogin" type="button"
+                        class="btn btn-primary btn-block">Login
+                </button>
             </form>
             <div class="text-center">
                 <a class="d-block small mt-3" href="register.html">
@@ -45,11 +49,15 @@
         </div>
     </div>
 </div>
-<!-- Bootstrap core JavaScript-->
-<script src="vendor/jquery/jquery.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- Core plugin JavaScript-->
-<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+@section('js')
+    @component('imports.jquery_js')@endcomponent
+    @component('imports.bootstrap_js')@endcomponent
+    @component('imports.jqueryeasing_js')@endcomponent
+    @component('imports.apisettings_js')@endcomponent
+    @component('imports.login_js')@endcomponent
+    @component('imports.jscookie_js')@endcomponent
+@show
 </body>
 
 </html>

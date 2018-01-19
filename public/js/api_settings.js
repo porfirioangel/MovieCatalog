@@ -1,0 +1,1 @@
+var serverHost = 'http://localhost:8000/api';

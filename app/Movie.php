@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class User extends Model
+class Movie extends Model
 {
-    protected $table = 'user';
+    protected $table = 'movie';
     public $timestamps = false;
 
     /**
@@ -15,7 +15,7 @@ class User extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'lastname', 'email', 'password',
+        'title', 'genre', 'year', 'password',
     ];
 
     /**
@@ -24,6 +24,6 @@ class User extends Model
      * @var array
      */
     protected $hidden = [
-        'password'
+
     ];
 }

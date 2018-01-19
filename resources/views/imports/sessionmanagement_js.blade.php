@@ -1,0 +1,1 @@
+<script src="{{ asset('js/session_management.js') }}"></script>

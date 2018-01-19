@@ -17,9 +17,9 @@
 </head>
 
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
-<!-- Navigation-->
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-    <a class="navbar-brand" href="index.html">Movie Catalog</a>
+    <a class="navbar-brand" href="/">Movie Catalog</a>
 
     <button class="navbar-toggler navbar-toggler-right" type="button"
             data-toggle="collapse" data-target="#navbarResponsive"
@@ -47,12 +47,12 @@
         <ul class="navbar-nav ml-auto">
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle mr-lg-2"
-                   id="messagesDropdown" href="#" data-toggle="dropdown">
+                   id="userDropdown" href="#" data-toggle="dropdown">
                     <i class="fa fa-fw fa-user"></i>
                     <span class="d-lg-none">Profile</span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right"
-                     aria-labelledby="messagesDropdown">
+                     aria-labelledby="userDropdown">
                     <a class="dropdown-item" href="#">
                         <div class="dropdown-message">
                             <i class="fa fa-fw fa-id-card"></i>
@@ -60,14 +60,17 @@
                         </div>
                     </a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#exampleModal">
+                    <a id="btnLogout" class="dropdown-item" href="#"
+                       data-toggle="modal"
+                       data-target="#exampleModal">
                         <div class="dropdown-message">
                             <i class="fa fa-fw fa-sign-out"></i>
                             Logout
                         </div>
                     </a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="login.html">
+                    <a id="btnLogin" class="dropdown-item"
+                       href="{{ url('login') }}">
                         <div class="dropdown-message">
                             <i class="fa fa-fw fa-sign-in"></i>
                             Login
@@ -80,25 +83,17 @@
 </nav>
 <div class="content-wrapper">
     <div class="container-fluid">
-        <!-- Breadcrumbs-->
         <ol class="breadcrumb">
             <li class="breadcrumb-item">
                 <a href="#">Movie Catalog</a>
             </li>
             <li class="breadcrumb-item active">@yield('section_title')</li>
         </ol>
-        <div class="row">
-            <div class="col-12">
-                <h1>Blank</h1>
-                <p>
-                    This is an example of a blank page that you can use as a
-                    starting point for creating new ones.
-                </p>
-            </div>
-        </div>
+
+        @section('page_content')
+        @show
     </div>
-    <!-- /.container-fluid-->
-    <!-- /.content-wrapper-->
+
     <footer class="sticky-footer">
         <div class="container">
             <div class="text-center">
@@ -106,11 +101,11 @@
             </div>
         </div>
     </footer>
-    <!-- Scroll to Top Button-->
+
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fa fa-angle-up"></i>
     </a>
-    <!-- Logout Modal-->
+
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
          aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -130,7 +125,9 @@
                     <button class="btn btn-secondary" type="button"
                             data-dismiss="modal">Cancel
                     </button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
+                    <button id="btnConfirmLogout"
+                            class="btn btn-primary">Logout
+                    </button>
                 </div>
             </div>
         </div>
@@ -141,6 +138,8 @@
         @component('imports.bootstrap_js')@endcomponent
         @component('imports.jqueryeasing_js')@endcomponent
         @component('imports.sbadmin_js')@endcomponent
+        @component('imports.jscookie_js')@endcomponent
+        @component('imports.sessionmanagement_js')@endcomponent
     @show
 </div>
 </body>
