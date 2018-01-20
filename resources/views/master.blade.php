@@ -37,7 +37,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="movies.html">
+                <a class="nav-link"  href="{{ url('/') }}">
                     <i class="fa fa-fw fa-film"></i>
                     <span class="nav-link-text">Movies</span>
                 </a>
@@ -141,6 +141,7 @@
         @component('imports.sbadmin_js')@endcomponent
         @component('imports.jscookie_js')@endcomponent
         @component('imports.sessionmanagement_js')@endcomponent
+        @component('imports.apisettings_js')@endcomponent
     @show
 </div>
 </body>

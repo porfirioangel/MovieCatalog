@@ -48,42 +48,9 @@
                             </a>
                         </td>
                     </tr>
-                    <tr>
-                        <td>Rápido y Furioso 2</td>
-                        <td>Action</td>
-                        <td>2001</td>
-                        <td>
-                            <a class="btn btn-warning text-white">
-                                <i class="fa fa-fw fa-pencil"></i>
-                            </a>
-                            <a class="btn btn-danger text-white"
-                               data-toggle="modal"
-                               data-target="#deleteMovieModal">
-                                <i class="fa fa-fw fa-eraser"></i>
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Rápido y Furioso 3</td>
-                        <td>Action</td>
-                        <td>2002</td>
-                        <td>
-                            <a class="btn btn-warning text-white">
-                                <i class="fa fa-fw fa-pencil"></i>
-                            </a>
-                            <a class="btn btn-danger text-white"
-                               data-toggle="modal"
-                               data-target="#deleteMovieModal">
-                                <i class="fa fa-fw fa-eraser"></i>
-                            </a>
-                        </td>
-                    </tr>
                     </tbody>
                 </table>
             </div>
-        </div>
-        <div class="card-footer small text-muted">
-            Updated yesterday at 11:59 PM
         </div>
     </div>
 @endsection
@@ -92,5 +59,5 @@
     @parent
     @component('imports.jquerydatatables_js')@endcomponent
     @component('imports.datatablesbootstrap4_js')@endcomponent
-    @component('imports.sbadmindatatables_js')@endcomponent
+    @component('imports.getmovies_js')@endcomponent
 @endsection

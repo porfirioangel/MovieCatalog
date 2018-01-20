@@ -1,0 +1,1 @@
+<script src="{{ asset('js/get_movies.js') }}"></script>

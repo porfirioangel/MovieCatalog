@@ -14,9 +14,6 @@ def before_scenario(context, scenario):
         context.driver = webdriver.Chrome(chrome_options=chrome_options)
 
     context.driver.set_window_size(1920, 1080)
-
-    print(context.driver.get_window_size())
-
     context.driver.get('http://localhost:8000')
 
 

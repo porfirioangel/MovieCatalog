@@ -38,4 +38,24 @@ class GenericTests
             'Se esperaban los atributos ' . $esperados . ' y se obtuvieron' .
             $obtenidos);
     }
+
+    public static function testEachElementAttributes($expected, $obtained)
+    {
+        sort($expected);
+        $esperados = '[' . implode(',', $expected) . ']';
+
+        $correctos = 0;
+        $totales = count($obtained);
+
+        foreach ($obtained as $element) {
+            ksort($element);
+            $obtenidos = '[' . implode(',', array_keys($element)) . ']';
+
+            GenericTests::$testCase->assertTrue($esperados == $obtenidos,
+                'Se esperaban los atributos ' . $esperados . ' y se obtuvieron' .
+                $obtenidos . ' ' . $correctos . ' de ' . $totales . ' correctos');
+
+            $correctos++;
+        }
+    }
 }
