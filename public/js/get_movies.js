@@ -20,9 +20,6 @@ function renderMovieList(movies) {
             '<td>' + movie.genre + '</td>' +
             '<td>' + movie.year + '</td>' +
             '<td>' +
-            '<a class="btn btn-warning text-white">' +
-            '<i class="fa fa-fw fa-pencil"></i>' +
-            '</a> ' +
             '<a class="btn btn-danger text-white" data-toggle="modal" ' +
             'data-target="#deleteMovieModal">' +
             '<i class="fa fa-fw fa-eraser"></i>' +

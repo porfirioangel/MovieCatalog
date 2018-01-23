@@ -35,21 +35,6 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td>Rápido y Furioso 1</td>
-                        <td>Action</td>
-                        <td>2000</td>
-                        <td>
-                            <a class="btn btn-warning text-white">
-                                <i class="fa fa-fw fa-pencil"></i>
-                            </a>
-                            <a class="btn btn-danger text-white"
-                               data-toggle="modal"
-                               data-target="#deleteMovieModal">
-                                <i class="fa fa-fw fa-eraser"></i>
-                            </a>
-                        </td>
-                    </tr>
                     </tbody>
                 </table>
             </div>
