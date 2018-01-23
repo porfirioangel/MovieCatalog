@@ -21,7 +21,8 @@ function renderMovieList(movies) {
             '<td>' + movie.year + '</td>' +
             '<td>' +
             '<a class="btn btn-danger text-white" data-toggle="modal" ' +
-            'data-target="#deleteMovieModal">' +
+            'data-target="#deleteMovieModal" data-id_movie="' + movie.id +
+            '">' +
             '<i class="fa fa-fw fa-eraser"></i>' +
             '</a>' +
             '</td>' +
