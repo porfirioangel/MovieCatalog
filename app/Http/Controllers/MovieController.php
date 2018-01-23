@@ -11,6 +11,23 @@ use Validator;
 
 class MovieController extends Controller
 {
+    /**
+     * Shows the view with the list of movies
+     */
+    public function index(Request $request) {
+        return view('movie_catalog');
+    }
+
+    /**
+     * Shows the form to insert a new movie
+     */
+    public function create(Request $request) {
+        return view('insert_movie');
+    }
+
+    /**
+     * Returns a Json with the list of movies
+     */
     public function movieList(Request $request)
     {
         $movies = Movie::all();
@@ -18,6 +35,9 @@ class MovieController extends Controller
         return ResponseUtils::jsonResponse(200, $movies);
     }
 
+    /**
+     * Inserts a new movie
+     */
     public function insertMovie(Request $request)
     {
         $validator = Validator::make($request->all(), [

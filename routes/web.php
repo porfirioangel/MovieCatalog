@@ -11,18 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('movie_catalog');
-});
-
-Route::get('login', function() {
-    return view('login');
-});
-
-Route::get('profile', function(){
-   return view('profile');
-});
-
-Route::get('insert_movie', function(){
-    return view('insert_movie');
-});
+Route::get('/', 'MovieController@index');
+Route::get('insert_movie', 'MovieController@create');
+Route::get('login', 'UsuarioController@loginPage');
+Route::get('profile', 'UsuarioController@show');

@@ -9,6 +9,20 @@ use Illuminate\Support\Facades\DB;
 
 class UsuarioController extends Controller
 {
+    /**
+     * Shows the view with the login page
+     */
+    public function loginPage(Request $request) {
+        return view('login');
+    }
+
+    /**
+     * Shows the view with the user info
+     */
+    public function show(Request $request) {
+        return view('profile');
+    }
+
     public function login(Request $request)
     {
         $email = $request['email'];
