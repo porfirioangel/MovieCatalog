@@ -9,6 +9,7 @@ function verifySession() {
         $('#btnLogin').remove();
     } else {
         $('#btnLogout').remove();
+        $('#btnProfile').remove();
     }
 }
 

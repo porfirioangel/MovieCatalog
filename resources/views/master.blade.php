@@ -31,12 +31,6 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
             <li class="nav-item">
-                <a class="nav-link" href="index.html">
-                    <i class="fa fa-fw fa-file"></i>
-                    <span class="nav-link-text">Blank</span>
-                </a>
-            </li>
-            <li class="nav-item">
                 <a class="nav-link"  href="{{ url('/') }}">
                     <i class="fa fa-fw fa-film"></i>
                     <span class="nav-link-text">Movies</span>
