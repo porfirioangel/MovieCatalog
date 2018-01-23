@@ -15,3 +15,4 @@ use Illuminate\Http\Request;
 
 Route::post('login', 'UsuarioController@login');
 Route::get('movie_list', 'MovieController@movieList');
+Route::post('insert_movie', 'MovieController@insertMovie');

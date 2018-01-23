@@ -8,14 +8,13 @@
           content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>SB Admin - Start Bootstrap Template</title>
-    <!-- Bootstrap core CSS-->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom fonts for this template-->
-    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet"
-          type="text/css">
-    <!-- Custom styles for this template-->
-    <link href="css/sb-admin.css" rel="stylesheet">
+    <title>Login</title>
+
+    @section('css')
+        @component('imports.bootstrap_css')@endcomponent
+        @component('imports.fontawesome_css')@endcomponent
+        @component('imports.sbadmin_css')@endcomponent
+    @show
 </head>
 
 <body class="bg-dark">

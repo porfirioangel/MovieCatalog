@@ -24,7 +24,7 @@ class CreateMovieTable extends Migration
         Schema::create($this->set_schema_table, function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
-            $table->string('title', 100);
+            $table->string('title', 100)->unique();
             $table->string('genre', 45)->nullable();
             $table->integer('year')->nullable();
         });

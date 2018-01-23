@@ -10,7 +10,8 @@
 @endsection
 
 @section('page_content')
-    <a class="btn btn-primary btn-block text-white" href="movie_form.html">
+    <a id="btnAddMovie" class="btn btn-primary btn-block text-white"
+       href="{{url('insert_movie')}}">
         <i class="fa fa-fw fa-plus"></i>
         Add New Movie
     </a>
@@ -18,7 +19,8 @@
 
     <div class="card mb-3">
         <div class="card-header">
-            <i class="fa fa-table"></i> Data Table Example
+            <i class="fa fa-table"></i>
+            Movie Catalog
         </div>
         <div class="card-body">
             <div class="table-responsive">

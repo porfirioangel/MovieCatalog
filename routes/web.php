@@ -22,3 +22,7 @@ Route::get('login', function() {
 Route::get('profile', function(){
    return view('profile');
 });
+
+Route::get('insert_movie', function(){
+    return view('insert_movie');
+});

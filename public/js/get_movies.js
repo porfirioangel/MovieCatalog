@@ -28,7 +28,7 @@ function renderMovieList(movies) {
             '<i class="fa fa-fw fa-eraser"></i>' +
             '</a>' +
             '</td>' +
-            '</tr>')
+            '</tr>');
     });
 
     setTimeout(function () {

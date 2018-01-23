@@ -96,6 +96,38 @@ def step_impl(context):
     assert 'Actions' in innerHtml, 'Se esperaba encontrar "Actions" en ' + innerHtml
 
 
+@given(u'I click <add new movie>')
+def step_impl(context):
+    btn_add_movie = find_element(context.driver, By.ID, 'btnAddMovie')
+    btn_add_movie.send_keys(keys.Keys.ENTER)
+    time.sleep(1)
+
+
+@given(u'I fill (?P<movie_name>.+) in <movie name>')
+def step_impl(context, movie_name):
+    txt_movie_name = find_element(context.driver, By.ID, 'txtMovieName')
+    txt_movie_name.send_keys(movie_name)
+
+
+@given(u'I fill (?P<movie_genre>.+) in <movie genre>')
+def step_impl(context, movie_genre):
+    txt_movie_genre = find_element(context.driver, By.ID, 'txtMovieGenre')
+    txt_movie_genre.send_keys(movie_genre)
+
+
+@given(u'I fill (?P<movie_year>.+) in <year>')
+def step_impl(context, movie_year):
+    txt_movie_year = find_element(context.driver, By.ID, 'txtMovieYear')
+    txt_movie_year.send_keys(movie_year)
+
+
+@when(u'I click <save movie>')
+def step_impl(context):
+    btn_save_movie = find_element(context.driver, By.ID, 'btnSaveMovie')
+    btn_save_movie.send_keys(keys.Keys.ENTER)
+    time.sleep(1)
+
+
 ################################################################################
 # Helpers
 ################################################################################
