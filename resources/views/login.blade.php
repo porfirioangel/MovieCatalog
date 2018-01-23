@@ -40,11 +40,6 @@
                         class="btn btn-primary btn-block">Login
                 </button>
             </form>
-            <div class="text-center">
-                <a class="d-block small mt-3" href="register.html">
-                    Register an Account
-                </a>
-            </div>
         </div>
     </div>
 </div>
