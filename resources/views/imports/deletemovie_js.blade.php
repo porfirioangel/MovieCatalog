@@ -1,0 +1,1 @@
+<script src="{{ asset('js/delete_movie.js') }}"></script>

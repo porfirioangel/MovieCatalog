@@ -1,5 +1,5 @@
 Feature: Insert movie
-  As a user
+  As an user
   I want to insert a movie in the catalog
   In order that the movie catalog is bigger
 

@@ -1,5 +1,5 @@
 Feature: List movies
-  As a user
+  As an user
   I want to see the list of movies
   In order to decide which I will watch with my girlfriend
 

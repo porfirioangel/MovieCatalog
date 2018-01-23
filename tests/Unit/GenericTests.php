@@ -58,4 +58,12 @@ class GenericTests
             $correctos++;
         }
     }
+
+    public static function testAttributeValue($expectedValue, $obtainedValue,
+                                              $attributeName)
+    {
+        GenericTests::$testCase->assertTrue($expectedValue == $obtainedValue,
+            'Se esperaba que "' . $attributeName . '" fuera ' .
+            $expectedValue . ' y se obtuvo ' . $obtainedValue);
+    }
 }

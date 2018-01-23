@@ -25,8 +25,6 @@
                 </div>
                 <div class="modal-body">
                     Are you sure that you want to delete the movie?
-
-                    (This feature is not implemented yet)
                 </div>
                 <div class="modal-footer">
                     <button class="btn btn-default" type="button"
@@ -78,4 +76,5 @@
     @component('imports.jquerydatatables_js')@endcomponent
     @component('imports.datatablesbootstrap4_js')@endcomponent
     @component('imports.getmovies_js')@endcomponent
+    @component('imports.deletemovie_js')@endcomponent
 @endsection

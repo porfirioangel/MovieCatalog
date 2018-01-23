@@ -1,5 +1,5 @@
 Feature: View profile
-  As a user
+  As an user
   I want to open my profile
   In order to see my personal information
 

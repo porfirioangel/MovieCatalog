@@ -13,6 +13,7 @@ function getMovieList() {
 function renderMovieList(movies) {
     var dataTable = $('#dataTable');
     var tbody = dataTable.find('tbody');
+    tbody.html('');
 
     $.each(movies, function (index, movie) {
         tbody.append('<tr>' +
@@ -20,11 +21,12 @@ function renderMovieList(movies) {
             '<td>' + movie.genre + '</td>' +
             '<td>' + movie.year + '</td>' +
             '<td>' +
-            '<a class="btn btn-danger text-white" data-toggle="modal" ' +
+            '<button class="btn btn-danger text-white btnDeleteMovie"' +
+            ' data-toggle="modal" ' +
             'data-target="#deleteMovieModal" data-id_movie="' + movie.id +
             '">' +
             '<i class="fa fa-fw fa-eraser"></i>' +
-            '</a>' +
+            '</button>' +
             '</td>' +
             '</tr>');
     });

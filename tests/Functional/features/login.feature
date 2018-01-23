@@ -1,5 +1,5 @@
 Feature: Login
-  As a user
+  As an user
   I want to login to the system
   In order to manage the movies
 

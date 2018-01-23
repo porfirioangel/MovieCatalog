@@ -1,8 +1,12 @@
+# -*- coding: utf-8 -*-
+
+import json
 import time
 from behave import *
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common import keys
+import requests
 
 use_step_matcher("re")
 
@@ -128,9 +132,46 @@ def step_impl(context):
     time.sleep(1)
 
 
+@when(u'I click <delete> for the first movie in the list')
+def step_impl(context):
+    context.old_movies_count = get_movie_count()
+    btn_delete_movie = find_element(context.driver, By.CLASS_NAME,
+                                    'btnDeleteMovie')
+    btn_delete_movie.send_keys(keys.Keys.ENTER)
+    time.sleep(1)
+
+
+@when(u'I click <accept> in the delete confirmation')
+def step_impl(context):
+    btn_confirm_delete = find_element(context.driver, By.ID,
+                                    'btnConfirmDeleteMovie')
+    btn_confirm_delete.send_keys(keys.Keys.ENTER)
+    time.sleep(1)
+
+
+@then(u'the movie that I deleted dissapear from the list')
+def step_impl(context):
+    new_movie_count = get_movie_count()
+    assert context.old_movies_count - 1 == new_movie_count, \
+        'Se esperaban ' + str(context.old_movies_count - 1)  + \
+        u' películas y se obtuvieron ' + str(new_movie_count)
+
+
+
 ################################################################################
 # Helpers
 ################################################################################
+
+def get_movie_count():
+    url = 'http://localhost:8000/api/movie_list'
+    headers = {'Content-Type': 'application/json'}
+    response = requests.get(url, headers)
+
+    if response.status_code == 200:
+        movies = json.loads(response.content.decode('utf-8'))
+        return len(movies)
+    else:
+        assert False, 'The status code was ' + str(response.status_code)
 
 def i_click_login(context):
     btn_login = find_element(context.driver, By.ID, 'btnLogin')

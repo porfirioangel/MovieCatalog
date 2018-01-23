@@ -66,4 +66,23 @@ class MovieController extends Controller
             'error' => $validator->errors()->all()
         ]);
     }
+
+    public function deleteMovie(Request $request) {
+        $validator = Validator::make($request->all(), [
+            'movie_id' => 'required'
+        ]);
+
+        if($validator->passes()) {
+            $movie = Movie::find($request['movie_id']);
+            $movie->delete();
+
+            return ResponseUtils::jsonResponse(200, [
+                'id' => $request['movie_id']
+            ]);
+        } else {
+            return ResponseUtils::jsonResponse(400, [
+                'error' => $validator->errors()->all()
+            ]);
+        }
+    }
 }
